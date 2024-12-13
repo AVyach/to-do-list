@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="rocketGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5865F2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4752C4;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Main rocket body -->
+  <path d="M100 20 L140 100 L100 180 L60 100 Z" 
+        fill="url(#rocketGradient)" 
+        filter="url(#glow)"/>
+        
+  <!-- Rocket fins -->
+  <path d="M60 100 L30 130 L60 120 Z" fill="#4752C4"/>
+  <path d="M140 100 L170 130 L140 120 Z" fill="#4752C4"/>
+  
+  <!-- Rocket window (clock background) -->
+  <circle cx="100" cy="100" r="25" 
+          fill="rgba(255,255,255,0.9)" 
+          stroke="#4752C4" 
+          stroke-width="2"/>
+  
+  <!-- Clock hands -->
+  <g transform="translate(100 100)">
+    <!-- Hour marks -->
+    <line x1="0" y1="-20" x2="0" y2="-18" stroke="#333" stroke-width="2" transform="rotate(0)"/>
+    <line x1="0" y1="-20" x2="0" y2="-18" stroke="#333" stroke-width="2" transform="rotate(30)"/>
+    <line x1="0" y1="-20" x2="0" y2="-18" stroke="#333" stroke-width="2" transform="rotate(60)"/>
+    <line x1="0" y1="-20" x2="0" y2="-18" stroke="#333" stroke-width="2" transform="rotate(90)"/>
+    <line x1="0" y1="-20" x2="0" y2="-18" stroke="#333" stroke-width="2" transform="rotate(120)"/>
+    <line x1="0" y1="-20" x2="0" y2="-18" stroke="#333" stroke-width="2" transform="rotate(150)"/>
+    <line x1="0" y1="-20" x2="0" y2="-18" stroke="#333" stroke-width="2" transform="rotate(180)"/>
+    <line x1="0" y1="-20" x2="0" y2="-18" stroke="#333" stroke-width="2" transform="rotate(210)"/>
+    <line x1="0" y1="-20" x2="0" y2="-18" stroke="#333" stroke-width="2" transform="rotate(240)"/>
+    <line x1="0" y1="-20" x2="0" y2="-18" stroke="#333" stroke-width="2" transform="rotate(270)"/>
+    <line x1="0" y1="-20" x2="0" y2="-18" stroke="#333" stroke-width="2" transform="rotate(300)"/>
+    <line x1="0" y1="-20" x2="0" y2="-18" stroke="#333" stroke-width="2" transform="rotate(330)"/>
+    
+    <!-- Clock hands -->
+    <line x1="0" y1="0" x2="0" y2="-15" 
+          stroke="#333" 
+          stroke-width="2" 
+          transform="rotate(45)"
+          stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="0" y2="-10" 
+          stroke="#333" 
+          stroke-width="2" 
+          transform="rotate(180)"
+          stroke-linecap="round"/>
+  </g>
+  
+  <!-- Stars -->
+  <circle cx="40" cy="40" r="2" fill="white"/>
+  <circle cx="160" cy="40" r="2" fill="white"/>
+  <circle cx="40" cy="160" r="2" fill="white"/>
+  <circle cx="160" cy="160" r="2" fill="white"/>
+</svg>

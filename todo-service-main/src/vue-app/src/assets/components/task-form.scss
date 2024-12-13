@@ -1,0 +1,229 @@
+.task-form-container {
+  background: rgba(var(--bg-secondary-rgb), 0.8);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 1px solid rgba(var(--accent-primary-rgb), 0.2);
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 8px 32px rgba(var(--accent-primary-rgb), 0.15);
+  position: relative;
+  overflow: hidden;
+ 
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      transparent,
+      rgba(var(--accent-primary-rgb), 0.5),
+      transparent
+    );
+  }
+ }
+ 
+ .form-title {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 15px rgba(var(--accent-primary-rgb), 0.3);
+  letter-spacing: 1px;
+ }
+ 
+ .task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+ }
+ 
+ .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  box-sizing: border-box;
+ 
+  label {
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-shadow: 0 0 8px rgba(var(--accent-primary-rgb), 0.2);
+  }
+ }
+ 
+ .form-input,
+ .form-select,
+ .form-textarea {
+  background: rgba(var(--bg-primary-rgb), 0.6);
+  border: 1px solid rgba(var(--accent-primary-rgb), 0.2);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+ 
+  &:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 15px var(--glow-primary);
+    outline: none;
+  }
+ 
+  &::placeholder {
+    color: var(--text-secondary);
+  }
+ }
+ 
+ .form-textarea {
+  min-height: 100px;
+  resize: vertical;
+ }
+ 
+ .tags-input-container {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+  box-sizing: border-box;
+ 
+  .form-input {
+    flex: 1;
+  }
+ }
+ 
+ .tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  width: 100%;
+  box-sizing: border-box;
+ }
+ 
+ .tag {
+  background: rgba(var(--accent-primary-rgb), 0.1);
+  border: 1px solid rgba(var(--accent-primary-rgb), 0.2);
+  border-radius: 24px;
+  color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  max-width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+ 
+  &:hover {
+    background: rgba(var(--accent-primary-rgb), 0.15);
+    box-shadow: 0 0 10px var(--glow-primary);
+  }
+ 
+  .remove-tag {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 1.25rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+ 
+    &:hover {
+      color: var(--error-color);
+      text-shadow: 0 0 8px var(--glow-error);
+    }
+  }
+ }
+ 
+ .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(var(--accent-primary-rgb), 0.1);
+ }
+ 
+ .btn-submit,
+ .btn-cancel {
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+ 
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: 0.5s;
+  }
+ 
+  &:hover::before {
+    left: 100%;
+  }
+ }
+ 
+ .btn-submit {
+  background: rgba(var(--accent-primary-rgb), 0.2);
+  color: var(--accent-primary);
+  border: 1px solid rgba(var(--accent-primary-rgb), 0.3);
+ 
+  &:hover {
+    background: rgba(var(--accent-primary-rgb), 0.3);
+    box-shadow: 0 0 20px var(--glow-primary);
+    transform: translateY(-2px);
+  }
+ }
+ 
+ .btn-cancel {
+  background: rgba(var(--error-color-rgb), 0.1);
+  color: var(--error-color);
+  border: 1px solid rgba(var(--error-color-rgb), 0.2);
+ 
+  &:hover {
+    background: rgba(var(--error-color-rgb), 0.2);
+    box-shadow: 0 0 15px var(--glow-error);
+  }
+ }
+ 
+ @media (max-width: 640px) {
+  .task-form-container {
+    padding: 1rem;
+  }
+ 
+  .form-actions {
+    flex-direction: column;
+    button {
+      width: 100%;
+    }
+  }
+ }
+
+.btn-delete
+{
+  
+}
